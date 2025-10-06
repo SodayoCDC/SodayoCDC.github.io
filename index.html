@@ -243,6 +243,7 @@
     <audio id="decodeSound" preload="auto">
         <source src="哈基米_爱给网_aigei_com.mp3" type="audio/mpeg">
     </audio>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const modeBtn = document.getElementById('modeBtn');
@@ -255,8 +256,23 @@
             const convertBtn = document.getElementById('convertBtn');
             const copyBtn = document.getElementById('copyBtn');
             const clearBtn = document.getElementById('clearBtn');
+            const soundToggle = document.getElementById('soundToggle');
+            
+            // 音频元素
+            const encodeSound = document.getElementById('encodeSound');
+            const decodeSound = document.getElementById('decodeSound');
             
             let isEncodeMode = true;
+            
+            // 播放音效函数
+            function playSound(sound) {
+                if (soundToggle.checked) {
+                    sound.currentTime = 0; // 重置音频到开始
+                    sound.play().catch(e => {
+                        console.log("音频播放失败:", e);
+                    });
+                }
+            }
             
             // 切换编码/解码模式
             modeBtn.addEventListener('click', function() {
@@ -265,18 +281,18 @@
                 if (isEncodeMode) {
                     playSound(encodeSound);
                     modeIcon.textContent = '🔒';
-                    modeText.textContent = '（点此切换模式）现为编码模式';
+                    modeText.textContent = '（点此切换模式）编码模式';
                     inputLabel.textContent = '输入文本';
                     outputLabel.textContent = 'Hachinese编码';
                     inputText.placeholder = '在这里输入要编码的文本...';
-                    outputText.placeholder = 'Hachinese编码将显示在这里...';
+                    outputText.placeholder = '哈Chinese编码将显示在这里...';
                 } else {
                     playSound(decodeSound);
                     modeIcon.textContent = '🔓';
-                    modeText.textContent = '（点此切换模式）现为解码模式';
-                    inputLabel.textContent = 'Hachinese';
+                    modeText.textContent = '（点此切换模式）解码模式';
+                    inputLabel.textContent = 'Hachinese编码';
                     outputLabel.textContent = '解码文本';
-                    inputText.placeholder = '在这里输入要解码的Hachinese...';
+                    inputText.placeholder = '在这里输入要解码的哈Chinese编码...';
                     outputText.placeholder = '解码后的文本将显示在这里...';
                 }
                 
