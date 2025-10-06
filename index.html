@@ -194,6 +194,19 @@
                 flex-direction: column;
             }
         }
+        
+        .audio-control {
+            margin-top: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+        
+        .audio-control input {
+            margin: 0;
+        }
     </style>
 </head>
 <body>
@@ -225,6 +238,11 @@
         <div class="output-area">
             <label for="outputText" id="outputLabel">输出结果</label>
             <textarea id="outputText" placeholder="转换结果将显示在这里..." readonly></textarea>
+        </div>
+
+        <div class="audio-control">
+            <input type="checkbox" id="soundToggle" checked>
+            <label for="soundToggle">启用音效</label>
         </div>
         
         <div class="info">
@@ -398,6 +416,7 @@
     </script>
 </body>
 </html>
+
 
 
 
