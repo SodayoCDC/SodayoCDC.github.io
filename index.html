@@ -201,6 +201,7 @@
         <header>
             <h1>Hachinese编解码器</h1>
             <p class="subtitle">将文本转换为Hachinese，或将其解码回原始文本</p>
+            <p class="subtitle" color = "red">本页面有音效！</p>
         </header>
         
         <div class="mode-selector">
@@ -235,7 +236,13 @@
             <p>当然这个网站我还是会拿来练手的，东西可能随时变</p>
         </div>
     </div>
-
+        <!-- 音频元素 -->
+    <audio id="encodeSound" preload="auto">
+        <source src="曼波_爱给网_aigei_com.m4a" type="audio/mpeg">
+    </audio>
+    <audio id="decodeSound" preload="auto">
+        <source src="哈基米_爱给网_aigei_com.mp3" type="audio/mpeg">
+    </audio>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const modeBtn = document.getElementById('modeBtn');
@@ -256,15 +263,17 @@
                 isEncodeMode = !isEncodeMode;
                 
                 if (isEncodeMode) {
+                    playSound(encodeSound);
                     modeIcon.textContent = '🔒';
-                    modeText.textContent = '编码模式';
+                    modeText.textContent = '（点此切换模式）现为编码模式';
                     inputLabel.textContent = '输入文本';
                     outputLabel.textContent = 'Hachinese编码';
                     inputText.placeholder = '在这里输入要编码的文本...';
                     outputText.placeholder = 'Hachinese编码将显示在这里...';
                 } else {
+                    playSound(decodeSound);
                     modeIcon.textContent = '🔓';
-                    modeText.textContent = '解码模式';
+                    modeText.textContent = '（点此切换模式）现为解码模式';
                     inputLabel.textContent = 'Hachinese';
                     outputLabel.textContent = '解码文本';
                     inputText.placeholder = '在这里输入要解码的Hachinese...';
@@ -373,6 +382,7 @@
     </script>
 </body>
 </html>
+
 
 
 
