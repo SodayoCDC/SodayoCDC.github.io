@@ -3,139 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>这是一个网站</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        
-        body {
-            background-image: url('wbg.png');
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: top center;
-            background-attachment: fixed;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            padding: 20px 0;
-        }
-        
-        p {
-            color: whitesmoke;
-        }
-        
-        /* 主容器 - 固定尺寸且自适应左边距 */
-        #main-div {
-            width: 1800px;
-            height: 1112px;
-            margin-top: 0;
-            position: relative;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-        
-        .fil {
-            border: 1px solid #fff;
-            backdrop-filter: blur(3px);
-        }
-        
-        .heimu, .heimu a, a .heimu, .heimu a.new {
-            background-color: whitesmoke;
-            color: whitesmoke;
-            text-shadow: none;
-        }
-        
-        .heimu:hover, .heimu:active,
-        .heimu:hover .heimu, .heimu:active .heimu {
-            color: darkblue !important;
-        }   
-        
-        .heimu:hover a, a:hover .heimu,
-        .heimu:active a, a:active .heimu {
-            color: blue !important;
-        }
-        
-        #my-info {
-            background-color: rgba(150, 160, 166, 0.5);
-            margin-top: 20px;
-            margin-left: 20px;
-            width: 230px;
-            height: 440px;
-            border-radius: 15px;
-            position: absolute;
-        }
-        
-        #info-title {
-            margin: 10px;
-            font-size: larger;
-        }
-        
-        #main-info {
-            position: relative;
-            margin: 10px;
-        }
-        
-        #navigation-of-myself {
-            background-color: rgba(150, 160, 166, 0.5);
-            margin-top: 20px;
-            margin-left: 20px;
-            width: 230px;
-            height: 200px;
-            border-radius: 15px;
-            position: absolute;
-            top: 470px; /* 放在my-info下方 */
-        }
-        
-    </style>
+    <link href="index.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    <!-- 主容器 -->
-    <div id="main-div">
-        <div id="my-info" class="fil">
-            <p id="info-title">自述</p>
-            <p id="main-info">你可以叫我NoneUwU，有的地方我叫Transmountain，还有的地方我是Sodayo，甚至没有固定头像（所以这里也没放），但是无论是哪个地方，我都是我，安东星人、坎星人、MC正版享受者、CS优先享受者，入门OIer（孩子们我只考过CIE）、蔚蓝档案盆栽种植者、航天人、装机人、初中人反正是一堆属性杂糅而成的根本不是人</p>
-            <p id="info-title">在进行的计划</p>
-            <p id="main-info">没有，以后一定有，<span class="heimu" title="你知道的太多了">比如基于Pygame的旮旯给木</span>，到时候我Github整面墙都会是绿的！</p>
-        </div>
-        <div id="navigation-of-myself" class="fil">
-            <p id="info-title">其他</p>
-            <p id="main-info">这个网站在修修修修修而我真的不会写JavaScript啊啊啊啊啊这个页面里的所有js全是deepseek写的，同时如果你需要Hachinese，请点击<a href="hachinese.html">这里</a></a></p>
-        </div>
+    <div id="my-info" class="btm">
+        <p id="info-title">自述</p>
+        <p id="main-info">没有自述...</a></s></p>
+        <p id="info-title">在进行的计划</p>
+        <p id="main-info">我曾经想过当一个ja瓦学弟，但是现在我要去当Golang学长了</p>
     </div>
-
-    <script>
-        // 获取DOM元素
-        const mainDiv = document.getElementById('main-div');
-        const windowWidthElement = document.getElementById('window-width');
-        const leftMarginElement = document.getElementById('left-margin');
-        
-        // 更新左边距和信息面板
-        function updateLeftMargin() {
-            const windowWidth = window.innerWidth;
-            let leftMargin;
-            
-            if (windowWidth < 1920) {
-                leftMargin = 0;
-            } else {
-                leftMargin = windowWidth * 0.0625;
-            }
-            
-            // 应用左边距
-            mainDiv.style.marginLeft = `${leftMargin}px`;
-            
-            // 更新信息面板
-            windowWidthElement.textContent = `${windowWidth}px`;
-            leftMarginElement.textContent = `${Math.round(leftMargin)}px`;
-        }
-        
-        // 初始调用
-        updateLeftMargin();
-        
-        // 监听窗口大小变化
-        window.addEventListener('resize', updateLeftMargin);
-    </script>
+    <div id="navigation-of-myself" class="btm"><p id="main-info">bro在写这行字的时候发现自己滥用id和class</p></div>
 </body>
 </html>
